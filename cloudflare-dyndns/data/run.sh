@@ -6,6 +6,7 @@ APIEMAIL=""
 DNSZONE_NAME=$(bashio::config 'domain')
 DNSZONE_RECORD=$(bashio::config 'record')
 SLEEP_TIME=$(bashio::config 'retry_interval')
+PROXY_RECORD=$(bashio::config 'proxy')
 LOG_LEVEL=$(bashio::config 'log_level' | tr '[:upper:]' '[:lower:]')
 
 if bashio::config.exists 'api_token'; then
@@ -34,7 +35,8 @@ fi
 echo -e "},\n" \
     "\"dnsZone\": {\n" \
     "\"name\": \"${DNSZONE_NAME}\",\n" \
-    "\"record\": \"${DNSZONE_RECORD}\"\n" \
+    "\"record\": \"${DNSZONE_RECORD}\",\n" \
+    "\"proxy\": ${PROXY_RECORD}\n" \
     "}\n" \
     "}" >> /app/config.json
 

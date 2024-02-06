@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.0
+
+- Add proxy option
+
 ## 0.4.0
 
 - Updated to cloudflare-dyndns v1.3.0
